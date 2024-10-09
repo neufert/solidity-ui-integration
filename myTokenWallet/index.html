@@ -8,9 +8,12 @@
 </head>
 
 <body>
-    <h1>MyToken Dapp</h1>
+    <h1>MyToken Wallet</h1>
 
-    <p>Token Balance: <span id="balance">0</span> MTK</p>
+    <div id="walletStatus" style="display: none;">
+        <p>Wallet Connected: <span id="accountAddress"></span></p>
+        <p>Token Balance: <span id="accountBalance"></span></p>
+    </div>
 
     <label for="recipient">Recipient Address:</label>
     <input type="text" id="recipient" placeholder="Enter recipient address"><br><br>
@@ -18,10 +21,10 @@
     <label for="amount">Transfer Amount:</label>
     <input type="text" id="amount" placeholder="Enter transfer amount"><br><br>
 
-    <button onclick="getBalance()">Get Balance</button>
-    <button onclick="transferTokens()">Transfer</button>
+    <button id='connectWalletButton'>Connect MetaMask Wallet</button>
+    <button disabled>Transfer</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/ethers@5.5.3/dist/ethers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="app.js"></script>
 </body>
 
